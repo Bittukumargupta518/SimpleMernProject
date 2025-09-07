@@ -1,0 +1,71 @@
+<%- include('./base/header.ejs') %>
+<%- include('./base/nave.ejs') %>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="col-md-6">
+        <div class="card shadow-lg rounded-3">
+            <div class="card-header bg-primary text-center text-white">
+                <h5 class="mb-0">Edit Student</h5>
+            </div>
+            <div class="card-body">
+                <form action="/edit/student/<%= student._id %>" method="post">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Roll No:</label>
+                        <input type="text" class="form-control" name="RollNo" value="<%= student.RollNo %>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Student Name:</label>
+                        <input type="text" class="form-control" name="StudentName" value="<%= student.StudentName %>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mother Name:</label>
+                        <input type="text" class="form-control" name="MotherName" value="<%= student.MotherName %>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Father Name:</label>
+                        <input type="text" class="form-control" name="FatherName" value="<%= student.FatherName %>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Course:</label>
+                        <select class="form-select" name="Course" required>
+                            <option value="" disabled>Select your Course</option>
+                            <option value="B.Tech" <%= student.Course === "B.Tech" ? "selected" : "" %>>B.Tech</option>
+                            <option value="M.Tech" <%= student.Course === "M.Tech" ? "selected" : "" %>>M.Tech</option>
+                            <option value="MCA" <%= student.Course === "MCA" ? "selected" : "" %>>MCA</option>
+                            <option value="BCA" <%= student.Course === "BCA" ? "selected" : "" %>>BCA</option>
+                            <option value="B.Sc" <%= student.Course === "B.Sc" ? "selected" : "" %>>B.Sc</option>
+                            <option value="M.Sc" <%= student.Course === "M.Sc" ? "selected" : "" %>>M.Sc</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Branch:</label>
+                        <select class="form-select" name="Branch" required>
+                            <option value="" disabled>Select your Branch</option>
+                            <option value="CSE" <%= student.Branch === "CSE" ? "selected" : "" %>>Computer Science & Engineering (CSE)</option>
+                            <option value="IT" <%= student.Branch === "IT" ? "selected" : "" %>>Information Technology (IT)</option>
+                            <option value="ECE" <%= student.Branch === "ECE" ? "selected" : "" %>>Electronics & Communication (ECE)</option>
+                            <option value="EE" <%= student.Branch === "EE" ? "selected" : "" %>>Electrical Engineering (EE)</option>
+                            <option value="ME" <%= student.Branch === "ME" ? "selected" : "" %>>Mechanical Engineering (ME)</option>
+                            <option value="CE" <%= student.Branch === "CE" ? "selected" : "" %>>Civil Engineering (CE)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Admission Year:</label>
+                        <input type="number" class="form-control" name="YearofAddmission" 
+                               value="<%= student.YearofAddmission %>" placeholder="yyyy" min="2000" max="2026" required>
+                    </div>
+
+                    <input type="submit" value="Update Student" class="btn btn-warning w-100">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./base/footer.ejs') %>

@@ -1,0 +1,74 @@
+<%- include('./base/header.ejs') %>
+<%- include('./base/nave.ejs') %>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="col-md-6">
+        <div class="card shadow-lg rounded-3">
+            <div class="card-header bg-primary text-center text-white">
+                <h5 class="mb-0">Add Student</h5>
+            </div>
+            <div class="card-body">
+                <form action="/add/student" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label">Roll No:</label>
+                        <input type="text" class="form-control" name="RollNo"></input> 
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Student Name:</label>
+                        <input type="text" class="form-control" name="StudentName"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mother Name:</label>
+                        <input type="text" class="form-control" name="MotherName"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Father Name:</label>
+                        <input type="text" class="form-control" name="FatherName"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Course:</label>
+                        <select class="form-select" name="Course" required>
+                            <option value="" disabled selected>Select your Course</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="MCA">MCA</option>
+                            <option value="BCA">BCA</option>
+                            <option value="B.Sc">B.Sc</option>
+                            <option value="M.Sc">M.Sc</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Branch:</label>
+                        <select class="form-select" name="Branch" required>
+                            <option value="" disabled selected>Select your Branch</option>
+                            <option value="CSE">Computer Science & Engineering (CSE)</option>
+                            <option value="IT">Information Technology (IT)</option>
+                            <option value="ECE">Electronics & Communication (ECE)</option>
+                            <option value="EE">Electrical Engineering (EE)</option>
+                            <option value="ME">Mechanical Engineering (ME)</option>
+                            <option value="CE">Civil Engineering (CE)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Admission Year:</label>
+                        <input type="number" class="form-control" name="YearofAddmission" placeholder="yyyy" min="2000" max="2026" required>
+                    </div>
+                    <div>
+                        <label class="form-label">select student Image:</label>
+                        <input type="file" class="form-control" name="studentImage"></input>
+                    </div>    
+
+
+                    <input type="submit" value="Add Student" class="btn btn-warning w-100">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./base/footer.ejs') %>
