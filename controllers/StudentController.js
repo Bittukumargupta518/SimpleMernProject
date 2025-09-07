@@ -6,9 +6,9 @@ async function addStudent(req,res) {
         let student = new Student(req.body);
         if(req.file){
             cloudinary.config({
-                cloud_name: '',
-                api_key: '',
-                api_secret: ''
+                cloud_name: 'drnvlgwqj',
+                api_key: '417795164491786',
+                api_secret: 'jj2l17C43UzspATgef07Cf08ZAY'
             })
             const result = await cloudinary.uploader.upload(req.file.path);
             student.studentImage = result.secure_url;   
@@ -77,7 +77,7 @@ async function updateStudent(req, res) {
 }
 
 module.exports = {
-  addstudent,
+  addStudent,
   deleteStudent,
   openEditpage,
   updateStudent   
