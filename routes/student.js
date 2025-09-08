@@ -9,11 +9,11 @@ const upload = multer({
   limits: {fileSize: 10 * 1024 * 1024}, 
 });
 router.post('/add/student',upload.single('studentImage'),(req,res)=>{
-  StudentController.addstudent(req,res);
+  StudentController.addStudent(req,res);
 })
 
 router.post('/add/student', (req,res)=>{
-  StudentController.addstudent(req,res);
+  StudentController.addStudent(req,res);
 
 })
 // Update student
