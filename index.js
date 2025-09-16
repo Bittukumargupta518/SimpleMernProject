@@ -19,6 +19,8 @@ app.set('views', path.resolve('./views'));
 app.listen(8000,(err)=>{
   if(err){
     console.log(err);
+    console.log('hvf');
+    
   }else{
     console.log("server is running on 8000");
   }
